@@ -12,7 +12,9 @@ public class Main {
         System.out.println(clinik.petsSer("Петрушка"));
 
         clinik.petsChan(1,"Петрушка",3);
+        System.out.println(" ");
         System.out.println(clinik.petsSort());
+        System.out.println(" ");
         clinik.petsSer("Петрушка");
 
     }

@@ -11,6 +11,16 @@ public class Pets {
         this.owner = owner;
     }
 
+    @Override
+    public String toString() {
+        return "Pets{" +
+                "number=" + number +
+                ", nickname='" + nickname + '\'' +
+                ", weight=" + weight +
+                ", owner=" + owner +
+                '}';
+    }
+
     public int getNumber() {
         return number;
     }
