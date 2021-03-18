@@ -1,7 +1,9 @@
-public class Pets {
+import java.util.Objects;
+
+public class Pets implements Comparable<Pets>{
     private int number;
     private String nickname;
-    private int weight;
+    private Integer weight;
     private Person owner;
 
     public Pets(int number, String nickname, int weight, Person owner) {
@@ -37,11 +39,11 @@ public class Pets {
         this.nickname = nickname;
     }
 
-    public int getWeight() {
+    public Integer getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(Integer weight) {
         this.weight = weight;
     }
 
@@ -51,6 +53,30 @@ public class Pets {
 
     public void setOwner(Person owner) {
         this.owner = owner;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pets pets = (Pets) o;
+        return number == pets.number &&
+                weight == pets.weight &&
+                Objects.equals(nickname, pets.nickname) &&
+                Objects.equals(owner, pets.owner);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(number, nickname, weight, owner);
+    }
+
+    @Override
+    public int compareTo(Pets o) {
+        int res=owner.getName().compareTo(owner.getName());
+        int res1=nickname.compareTo(nickname);
+        int res11=weight.compareTo(weight);
+        return 0;
     }
 }
 
