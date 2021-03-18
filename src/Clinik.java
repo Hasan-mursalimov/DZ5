@@ -5,7 +5,7 @@ public class Clinik {
 
     public Map<Integer, Pets> petAdd(Pets pets) {
         try {
-            if (petsMap.putIfAbsent(pets.getNumber(), pets) != null) ;
+                if (petsMap.putIfAbsent(pets.getNumber(), pets) != null) ;
             throw new DuplicateItemsException("Такое животное уже существует");
         } catch (DuplicateItemsException dIE) {
             System.out.println(dIE.getMessage());
@@ -29,6 +29,8 @@ public class Clinik {
     }
 
     public Map<Integer,Pets> petsSort() {
+
+
         List<Pets>list=new ArrayList<>();
         Collections.sort(list,Comparator.comparing(Pets::getNickname).thenComparing(Pets::getWeight));
         for (Pets pet:list){
