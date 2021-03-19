@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Pets implements Comparable<Pets>{
+public class Pets implements Comparable<Pets> {
     private int number;
     private String nickname;
     private Integer weight;
@@ -73,10 +73,14 @@ public class Pets implements Comparable<Pets>{
 
     @Override
     public int compareTo(Pets o) {
-        int res=owner.getName().compareTo(owner.getName());
-        int res1=nickname.compareTo(nickname);
-        int res11=weight.compareTo(weight);
-        return 0;
+        int res = owner.getName().compareTo(owner.getName());
+        if (res == 0)
+            return nickname.compareTo(nickname);
+        int res1 = nickname.compareTo(nickname);
+        if (res1 == 0)
+            return weight.compareTo(weight);
+
+        else return res;
     }
 }
 
