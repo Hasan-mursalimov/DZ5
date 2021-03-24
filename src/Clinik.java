@@ -28,14 +28,18 @@ public class Clinik {
         if (weight!=0)petsMap.get(number).setWeight(weight);
     }
 
-    public Map<Integer,Pets> petsSort() {
+    public Map<Integer, Pets> petsSort() {
 
+        List<Pets>list=new ArrayList<>(petsMap.values());
+        System.out.println("------------До----------");
+        Collections.sort(list);
 
-        List<Pets>list=new ArrayList<>();
-        Collections.sort(list,Comparator.comparing(Pets::getNickname).thenComparing(Pets::getWeight));
-        for (Pets pet:list){
-            System.out.println(pet);
+        for (Pets p:list){
+            System.out.println("----------После------------");
+            System.out.println(p);
+
         }
+
         return petsMap;
     }
 }

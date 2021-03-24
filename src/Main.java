@@ -11,11 +11,11 @@ public class Main {
         clinik.petAdd(new Pets(8,"Варюшка",2,new Person("Танзиля", 22,Sex.WOMAN)));
         System.out.println(clinik.petsSer("Петрушка"));
 
-        clinik.petsChan(1,"Петрушка",3);
-        System.out.println(" ");
+//        clinik.petsChan(1,"Петрушка",3);
+//        System.out.println(" ");
         System.out.println(clinik.petsSort());
-        System.out.println(" ");
-        clinik.petsSer("Петрушка");
+//        System.out.println(" ");
+//        clinik.petsSer("Петрушка");
 
     }
 }
